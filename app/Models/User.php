@@ -77,10 +77,10 @@ class User extends Authenticatable
             ]
         );
 
-        if(!empty($user_id))
+        if(!empty($user_id)){
             $this->send_email($email, $email_code);
-
-        session()->put('id', $user_id);
+             session()->put('id', $user_id);
+        }
     }
 
     public function check_code(){
