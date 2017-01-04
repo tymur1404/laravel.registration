@@ -49,14 +49,6 @@ class User extends Authenticatable
 
     }
 
-    public function applyEmailCode($id, $password){
-        return DB::table('users')
-            ->where('id', $id)
-            ->where('email_code', $password)
-            ->update(array('is_active' => 1));
-    }
-
-
     public function send_email($email, $email_code){
 
         $text = "Please enter this code: $email_code";
